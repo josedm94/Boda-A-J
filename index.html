@@ -80,6 +80,13 @@
     background:#222; color:#fff; border-radius:50%;
     width:52px; height:52px; display:flex; align-items:center; justify-content:center;
     cursor:pointer;
+    border:none;
+    font-size: 1.1rem;
+  }
+  .audio-info{
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: var(--verde-osc);
   }
 
   /* ---------- NOS CASAMOS ---------- */
@@ -149,7 +156,7 @@
   /* ---------- DETALLES DEL EVENTO ---------- */
   .foto-detalles{
     width:100%; max-width: 700px; margin: 0 auto;
-    height: 480px;
+    height: 420px;
     background: url('foto7.png') center/cover no-repeat;
   }
   .evento-card{ margin: 50px auto; max-width:400px; }
@@ -217,11 +224,12 @@
   <section class="bg-crema-osc">
     <h2 class="titulo-verde script" style="font-size:1.8rem;">Nuestra Canción</h2>
     <div class="player">
-      <span>♡</span><span>⏮</span>
-      <div class="play" id="playBtn" onclick="toggleSong()">▶</div>
-      <span>⏭</span><span>⊕</span>
+      <button class="play" id="playBtn" onclick="toggleSong()" aria-label="Reproducir canción">▶</button>
     </div>
-    <div id="spotifyContainer" style="max-width:400px; margin:15px auto 0; height:0; overflow:hidden;"></div>
+    <audio id="audioPlayer" preload="none">
+      <source src="" type="audio/mpeg">
+    </audio>
+    <p class="audio-info">Puedes cambiar el archivo de audio en el código por tu canción o un enlace externo.</p>
   </section>
 
   <!-- ============ NOS CASAMOS ============ -->
@@ -343,26 +351,35 @@
 <script>
   // ======= REPRODUCTOR DE "NUESTRA CANCIÓN" =======
   let cancionSonando = false;
-  const spotifyURL = "https://open.spotify.com/embed/track/1myZ6GQewhAzMH2dKtKSWK?utm_source=generator";
+  const audio = document.getElementById('audioPlayer');
+  const boton = document.getElementById('playBtn');
+
+  // Enlace de audio configurado para la canción de la boda.
+  audio.src = "https://youtu.be/62rgRxlM4-E?si=WGe7jyZ-m6tW15rx&t=16";
 
   function toggleSong(){
-    const contenedor = document.getElementById('spotifyContainer');
-    const boton = document.getElementById('playBtn');
+    if(!audio.src){
+      alert('Agrega la URL o archivo de audio en la variable audio.src para que funcione.');
+      return;
+    }
 
     if(!cancionSonando){
-      // Crea el iframe con autoplay=1 para que arranque desde el inicio de la canción
-      contenedor.innerHTML = `<iframe style="border-radius:12px" src="${spotifyURL}&autoplay=1" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
-      contenedor.style.height = "152px";
+      audio.play().catch(() => {
+        alert('No se pudo iniciar la reproducción. Verifica el archivo de audio o el enlace.');
+      });
       boton.textContent = "❙❙";
       cancionSonando = true;
     } else {
-      // Quita el iframe para detener la reproducción
-      contenedor.innerHTML = "";
-      contenedor.style.height = "0";
+      audio.pause();
       boton.textContent = "▶";
       cancionSonando = false;
     }
   }
+
+  audio.addEventListener('ended', () => {
+    boton.textContent = "▶";
+    cancionSonando = false;
+  });
 </script>
 
 <script>
