@@ -89,43 +89,6 @@
     font-size: 0.95rem;
     color: var(--verde-osc);
   }
-  .song-info{
-    margin-top: 16px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-  }
-  .song-title{
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--marron);
-    letter-spacing: 0.04em;
-  }
-  .song-subtitle{
-    font-size: 0.95rem;
-    color: var(--verde-osc);
-  }
-  .floating-audio-btn{
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 1000;
-    width: 56px;
-    height: 56px;
-    border:none;
-    border-radius: 50%;
-    background: var(--verde-osc);
-    color:#fff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    font-size: 1.25rem;
-    transition: transform 0.2s ease;
-  }
-  .floating-audio-btn:hover{ transform: scale(1.04); }
 
   /* ---------- NOS CASAMOS ---------- */
   .marco-image-wrap{
@@ -262,16 +225,13 @@
   <!-- ============ MUSICA ============ -->
   <section class="bg-crema-osc">
     <h2 class="titulo-verde script" style="font-size:1.8rem;">Nuestra Canción</h2>
-    <div class="song-info">
-      <p class="song-title" id="songTitle">Amor Eterno</p>
-      <p class="song-subtitle">Se reproduce automáticamente al abrir la página</p>
+    <div class="player">
+      <button class="play" id="playBtn" onclick="toggleSong()" aria-label="Reproducir canción"><i class="bi bi-play-fill"></i></button>
     </div>
-    <audio id="audioPlayer" preload="auto" autoplay loop>
-      <source src="song.mp3" type="audio/mpeg">
+    <audio id="audioPlayer" preload="none">
+      <source src="" type="audio/mpeg">
     </audio>
-    <button class="floating-audio-btn" id="floatingAudioBtn" type="button" aria-label="Pausar o silenciar la canción">
-      <i class="bi bi-pause-fill" id="floatingAudioIcon"></i>
-    </button>
+    <!-- <p class="audio-info">Puedes cambiar el archivo de audio en el código por tu canción o un enlace externo.</p> -->
   </section>
 
   <!-- ============ NOS CASAMOS ============ -->
@@ -392,69 +352,36 @@
 
 <script>
   // ======= REPRODUCTOR DE "NUESTRA CANCIÓN" =======
+  let cancionSonando = false;
   const audio = document.getElementById('audioPlayer');
-  const boton = document.getElementById('floatingAudioBtn');
-  const icono = document.getElementById('floatingAudioIcon');
+  const boton = document.getElementById('playBtn');
 
-  let volumenAnterior = 1;
+  // Enlace de audio configurado para la canción de la boda.
+  audio.src = "song.mp3"; // Cambia esto por la URL o archivo de audio que desees usar.
 
-  function actualizarBoton() {
-    if (audio.muted) {
-      icono.className = 'bi bi-volume-mute-fill';
-      boton.setAttribute('aria-label', 'Reanudar la canción');
+  function toggleSong(){
+    if(!audio.src){
+      alert('Agrega la URL o archivo de audio en la variable audio.src para que funcione.');
       return;
     }
 
-    if (!audio.paused && !audio.ended) {
-      icono.className = 'bi bi-pause-fill';
-      boton.setAttribute('aria-label', 'Pausar la canción');
+    if(!cancionSonando){
+      audio.play().catch(() => {
+        alert('No se pudo iniciar la reproducción. Verifica el archivo de audio o el enlace.');
+      });
+      boton.innerHTML = '<i class="bi bi-pause-fill"></i>';
+      cancionSonando = true;
     } else {
-      icono.className = 'bi bi-play-fill';
-      boton.setAttribute('aria-label', 'Reproducir la canción');
-    }
-  }
-
-  function toggleSong() {
-    if (audio.muted) {
-      audio.muted = false;
-      audio.volume = volumenAnterior || 1;
-      actualizarBoton();
-      return;
-    }
-
-    if (!audio.paused && !audio.ended) {
       audio.pause();
-      actualizarBoton();
-      return;
+      boton.innerHTML = '<i class="bi bi-play-fill"></i>';
+      cancionSonando = false;
     }
-
-    audio.play().then(() => {
-      actualizarBoton();
-    }).catch(() => {
-      alert('No se pudo iniciar la reproducción. Verifica el archivo de audio o el enlace.');
-    });
   }
 
   audio.addEventListener('ended', () => {
-    actualizarBoton();
+    boton.innerHTML = '<i class="bi bi-play-fill"></i>';
+    cancionSonando = false;
   });
-
-  audio.addEventListener('volumechange', () => {
-    if (audio.volume > 0 && !audio.muted) {
-      volumenAnterior = audio.volume;
-    }
-  });
-
-  window.addEventListener('load', () => {
-    audio.play().then(() => {
-      actualizarBoton();
-    }).catch(() => {
-      actualizarBoton();
-    });
-  });
-
-  boton.addEventListener('click', toggleSong);
-  actualizarBoton();
 </script>
 
 <script>
