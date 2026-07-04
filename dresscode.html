@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dresscode — Boda de noche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    .dc-wrap {
+      background: transparent;
+      border-radius: 16px;
+      padding: 32px 24px 28px;
+      max-width: 340px;
+      margin: 0 auto;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .dc-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #7A8A72;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 6px;
+      font-family: sans-serif;
+      font-weight: 400;
+    }
+    .dc-title {
+      font-size: 22px;
+      font-weight: 300;
+      color: #EDE8DF;
+      text-align: center;
+      margin: 0 0 4px;
+      letter-spacing: 0.04em;
+    }
+    .dc-sub {
+      font-size: 13px;
+      font-style: italic;
+      color: #6A7A62;
+      text-align: center;
+      margin: 0 0 22px;
+      font-weight: 300;
+    }
+    .dc-divider {
+      width: 40px;
+      height: 0.5px;
+      background: #3A4A3A;
+      margin: 0 auto 22px;
+    }
+    .dc-section-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: #5A6A52;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 10px;
+      font-family: sans-serif;
+    }
+
+    /* Novios */
+    .dc-novios {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .dc-novio-block {
+      flex: 1;
+      border-radius: 10px;
+      padding: 14px 10px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .dc-novio-role {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-family: sans-serif;
+    }
+    .dc-novio-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+    .dc-novio-name {
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .dc-novio-hex {
+      font-size: 9.5px;
+      font-family: monospace;
+    }
+
+    /* Paleta */
+    .dc-palette-row {
+      margin-bottom: 8px;
+    }
+    .dc-palette-sublabel {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      color: #5A6A52;
+      text-transform: uppercase;
+      font-family: sans-serif;
+      margin: 0 0 6px 2px;
+    }
+    .dc-swatches {
+      display: flex;
+      gap: 5px;
+    }
+    .dc-swatch {
+      flex: 1;
+      height: 52px;
+      border-radius: 8px;
+      cursor: default;
+      transition: flex 0.25s ease;
+    }
+    .dc-swatch:hover {
+      flex: 1.6;
+    }
+
+    /* Evitar */
+    .dc-avoid {
+      border-top: 0.5px solid #1E2E1E;
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+    .dc-avoid-label {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      color: #4A3A3A;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 10px;
+      font-family: sans-serif;
+    }
+    .dc-avoid-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+    .dc-avoid-chip {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 0.5px solid #2A1A1A;
+      font-size: 10px;
+      color: #4A3A3A;
+      font-family: sans-serif;
+      text-decoration: line-through;
+      text-decoration-color: #4A2A2A;
+    }
+    .dc-avoid-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dc-tip {
+      margin-top: 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 12px;
+      color: #5A6A52;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dc-wrap">
+
+    <p class="dc-eyebrow">Dresscode</p>
+    <h1 class="dc-title">Boda de noche</h1>
+    <p class="dc-sub">Formal — Black tie opcional</p>
+    <div class="dc-divider"></div>
+
+    <!-- NOVIOS -->
+    <p class="dc-section-label">Los novios</p>
+    <div class="dc-novios">
+      <div class="dc-novio-block" style="background:#111D2E;">
+        <span class="dc-novio-role" style="color:#6070A0;">Novio</span>
+        <div class="dc-novio-swatch" style="background:#1B2A4A; border: 0.5px solid #2A3A5A;"></div>
+        <span class="dc-novio-name" style="color:#C0CCEE;">Azul marino</span>
+        <span class="dc-novio-hex" style="color:#4A5A80;">#1B2A4A</span>
+      </div>
+      <div class="dc-novio-block" style="background:#1E1C18; border: 0.5px solid #2A2820;">
+        <span class="dc-novio-role" style="color:#8A7D74;">Novia</span>
+        <div class="dc-novio-swatch" style="background:#EDE8DF; border: 0.5px solid #CEC8BE;"></div>
+        <span class="dc-novio-name" style="color:#9A9088;">Blanco hueso</span>
+        <span class="dc-novio-hex" style="color:#5A5048;">#EDE8DF</span>
+      </div>
+    </div>
+
+    <div class="dc-divider"></div>
+
+    <!-- PALETA INVITADOS -->
+    <p class="dc-section-label">Invitados</p>
+
+    <div class="dc-palette-row">
+      <p class="dc-palette-sublabel">Ellas</p>
+      <div class="dc-swatches">
+        <div class="dc-swatch" style="background:#5C1C1C;" title="Borgoña"></div>
+        <div class="dc-swatch" style="background:#6A3D50;" title="Mauve oscuro"></div>
+        <div class="dc-swatch" style="background:#9E6060;" title="Dusty rose"></div>
+        <div class="dc-swatch" style="background:#2E3D22;" title="Verde bosque"></div>
+      </div>
+    </div>
+
+    <div class="dc-palette-row" style="margin-bottom: 0;">
+      <p class="dc-palette-sublabel">Ellos</p>
+      <div class="dc-swatches">
+        <div class="dc-swatch" style="background:#1A1614;" title="Negro cálido"></div>
+        <div class="dc-swatch" style="background:#2E3440;" title="Gris pizarra"></div>
+        <div class="dc-swatch" style="background:#3C2010;" title="Café oscuro"></div>
+        <div class="dc-swatch" style="background:#2E3D22;" title="Verde bosque"></div>
+      </div>
+    </div>
+
+    <!-- EVITAR -->
+    <div class="dc-avoid">
+      <p class="dc-avoid-label">Evitar</p>
+      <div class="dc-avoid-chips">
+        <div class="dc-avoid-chip">
+          <div class="dc-avoid-dot" style="background:#FFFFFF; border: 0.5px solid #444;"></div>
+          Blanco
+        </div>
+        <div class="dc-avoid-chip">
+          <div class="dc-avoid-dot" style="background:#1B2A4A;"></div>
+          Azul marino
+        </div>
+        <div class="dc-avoid-chip">
+          <div class="dc-avoid-dot" style="background:#E8C4BC;"></div>
+          Palo rosa
+        </div>
+        <div class="dc-avoid-chip">
+          <div class="dc-avoid-dot" style="background:#F8F0FF; border: 0.5px solid #444;"></div>
+          Pasteles
+        </div>
+      </div>
+    </div>
+
+    <p class="dc-tip">Accesorios dorados o cobrizos<br>son siempre bienvenidos.</p>
+
+  </div>
+
+</body>
+</html>

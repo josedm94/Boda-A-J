@@ -203,6 +203,104 @@
   @media(max-width:600px){ .grid-2{ grid-template-columns: 1fr; } }
   .info-box{ background:#fff; padding: 30px 20px; }
   .info-box h4{ color: var(--marron); font-size: 1.5rem; margin-bottom: 10px; }
+  .dresscode-card{
+    background: linear-gradient(135deg, rgba(243,234,217,0.9), rgba(255,255,255,0.95));
+    border: 1px solid rgba(139, 106, 75, 0.12);
+    border-radius: 18px;
+    padding: 24px 18px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--texto);
+    text-align: left;
+  }
+  .dresscode-eyebrow{
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--verde-osc);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .dresscode-title{
+    font-size: 1.7rem;
+    color: var(--marron);
+    text-align: center;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .dresscode-subtitle{
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--verde-osc);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .dresscode-divider{
+    width: 48px;
+    height: 1px;
+    background: var(--marron);
+    margin: 0 auto 18px;
+    opacity: 0.7;
+  }
+  .dresscode-roles{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .dresscode-role-card{
+    border-radius: 12px;
+    padding: 12px 10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 6px;
+  }
+  .dresscode-role-label{
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .dresscode-swatch{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .dresscode-role-name{ font-size: 0.98rem; font-weight: 500; }
+  .dresscode-role-hex{ font-size: 0.8rem; font-family: monospace; }
+  .dresscode-section-label{
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--verde-osc);
+    margin: 12px 0 8px;
+    text-align: center;
+  }
+  .dresscode-palette{ display:grid; gap: 10px; margin-bottom: 14px; }
+  .dresscode-palette-row{ display:grid; gap: 6px; }
+  .dresscode-palette-sublabel{ font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--verde-osc); }
+  .dresscode-swatches{ display:flex; gap: 6px; }
+  .dresscode-swatch-pill{ flex:1; height: 44px; border-radius: 8px; }
+  .dresscode-avoid{
+    border-top: 1px solid rgba(138,106,75,0.2);
+    padding-top: 14px;
+    margin-top: 14px;
+  }
+  .dresscode-avoid-label{
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--marron);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .dresscode-avoid-chips{ display:flex; flex-wrap:wrap; gap: 8px; justify-content:center; }
+  .dresscode-avoid-chip{ display:flex; align-items:center; gap:6px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(138,106,75,0.25); font-size: 0.88rem; color: var(--texto); }
+  .dresscode-avoid-dot{ width: 8px; height: 8px; border-radius:50%; }
+  .dresscode-tip{ margin-top: 14px; text-align:center; font-style:italic; font-size: 0.96rem; color: var(--verde-osc); line-height: 1.5; }
+  @media(max-width:600px){ .dresscode-roles{ grid-template-columns: 1fr; } }
 
   /* ---------- GALERIA ---------- */
   .galeria{
@@ -325,9 +423,62 @@
     <p class="titulo-verde" style="font-size:1.1rem;">Te dejamos algunos detalles a tener en cuenta.</p>
     <div class="grid-2">
       <div class="info-box">
-        <h4>Dress Code</h4>
-        <p class="icono-minimal"><i class="bi bi-bag-heart"></i></p>
-        <p>* Formal.<br>*Elegante Sport.<br>* La celebración será en jardín, considera zapatos aptos para grama.</p>
+        <div class="dresscode-card">
+          <p class="dresscode-eyebrow">Dresscode</p>
+          <h4 class="dresscode-title">Boda de noche</h4>
+          <p class="dresscode-subtitle">Formal — Black tie opcional</p>
+          <div class="dresscode-divider"></div>
+
+          <p class="dresscode-section-label">Los novios</p>
+          <div class="dresscode-roles">
+            <div class="dresscode-role-card" style="background:#111D2E;">
+              <span class="dresscode-role-label" style="color:#6070A0;">Novio</span>
+              <div class="dresscode-swatch" style="background:#1B2A4A;"></div>
+              <span class="dresscode-role-name" style="color:#C0CCEE;">Azul marino</span>
+              <span class="dresscode-role-hex" style="color:#4A5A80;">#1B2A4A</span>
+            </div>
+            <div class="dresscode-role-card" style="background:#1E1C18;">
+              <span class="dresscode-role-label" style="color:#8A7D74;">Novia</span>
+              <div class="dresscode-swatch" style="background:#EDE8DF;"></div>
+              <span class="dresscode-role-name" style="color:#9A9088;">Blanco hueso</span>
+              <span class="dresscode-role-hex" style="color:#5A5048;">#EDE8DF</span>
+            </div>
+          </div>
+
+          <p class="dresscode-section-label">Invitados</p>
+          <div class="dresscode-palette">
+            <div class="dresscode-palette-row">
+              <p class="dresscode-palette-sublabel">Ellas</p>
+              <div class="dresscode-swatches">
+                <div class="dresscode-swatch-pill" style="background:#5C1C1C;"></div>
+                <div class="dresscode-swatch-pill" style="background:#6A3D50;"></div>
+                <div class="dresscode-swatch-pill" style="background:#9E6060;"></div>
+                <div class="dresscode-swatch-pill" style="background:#2E3D22;"></div>
+              </div>
+            </div>
+            <div class="dresscode-palette-row">
+              <p class="dresscode-palette-sublabel">Ellos</p>
+              <div class="dresscode-swatches">
+                <div class="dresscode-swatch-pill" style="background:#1A1614;"></div>
+                <div class="dresscode-swatch-pill" style="background:#2E3440;"></div>
+                <div class="dresscode-swatch-pill" style="background:#3C2010;"></div>
+                <div class="dresscode-swatch-pill" style="background:#2E3D22;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dresscode-avoid">
+            <p class="dresscode-avoid-label">Evitar</p>
+            <div class="dresscode-avoid-chips">
+              <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#FFFFFF; border:0.5px solid #444;"></span>Blanco</div>
+              <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#1B2A4A;"></span>Azul marino</div>
+              <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#E8C4BC;"></span>Palo rosa</div>
+              <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#F8F0FF; border:0.5px solid #444;"></span>Pasteles</div>
+            </div>
+          </div>
+
+          <p class="dresscode-tip">Accesorios dorados o cobrizos<br>son siempre bienvenidos.</p>
+        </div>
       </div>
       <div class="info-box">
         <h4>Nota</h4>
