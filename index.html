@@ -14,191 +14,125 @@
     --dorado: #B9905A;
     --marron: #8A6A4B;
     --texto: #4A4438;
-    --blanco: #ffffff;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     font-family: 'EB Garamond', serif;
-    background:
-      radial-gradient(circle at top left, rgba(185,144,90,0.10), transparent 28%),
-      linear-gradient(135deg, #fcf8f2 0%, var(--crema) 100%);
+    background: var(--crema);
     color: var(--texto);
+    text-align:center;
     overflow-x:hidden;
-    line-height:1.6;
   }
-  img{display:block; width:100%;}
   .script{ font-family:'Alex Brush', cursive; }
   .serif-title{ font-family:'Cormorant Garamond', serif; }
-  .container{ max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
     min-height:100vh;
+    background: url('portada.jpg') center/cover no-repeat;
     display:flex; align-items:center; justify-content:center;
-    background: linear-gradient(135deg, rgba(0,0,0,0.22), rgba(0,0,0,0.36)), url('foto3.jpg') center/cover no-repeat;
-    padding: 24px;
   }
-  .hero::before{
+  .hero::after{
     content:"";
-    position:absolute; inset: 20px;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 28px;
-    pointer-events:none;
+    position:absolute; inset:0;
+    background: rgba(255,255,255,0.15);
   }
-  .hero-content{
+  .hero-text{
     position:relative; z-index:2;
-    text-align:center;
     color:#fff;
-    max-width: 780px;
-    padding: 40px 24px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.35);
   }
-  .hero-badge{
-    display:inline-block;
-    border: 1px solid rgba(255,255,255,0.65);
-    padding: 10px 18px;
-    border-radius: 999px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    margin-bottom: 18px;
+  .hero-text .nombres{
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height:1.1;
   }
-  .hero .nombres{
-    font-size: clamp(3rem, 8vw, 6.2rem);
-    line-height:1.05;
-  }
-  .hero .amp{
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
+  .hero-text .amp{
+    font-size: 2.2rem;
     color: var(--dorado);
-    margin: 0.25em 0;
+    margin: 0.2em 0;
   }
-  .hero .subline{ font-size: clamp(1rem, 2.2vw, 1.25rem); margin-top: 16px; color: rgba(255,255,255,0.92); }
 
-  /* ---------- SECCIONES ---------- */
-  section{ padding: 84px 24px; }
-  .section-card{
-    background: rgba(255,255,255,0.72);
-    border: 1px solid rgba(185,144,90,0.18);
-    border-radius: 28px;
-    box-shadow: 0 15px 35px rgba(138,106,75,0.10);
-    backdrop-filter: blur(4px);
-  }
-  .soft-bg{ background: linear-gradient(135deg, rgba(243,234,217,0.85), rgba(250,245,236,0.95)); }
-  .eyebrow{
-    display:block;
-    font-size: 0.95rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--dorado);
-    margin-bottom: 8px;
-  }
-  .intro-title{
-    font-size: clamp(2rem, 3.8vw, 2.8rem);
-    color: var(--marron);
-    font-family: 'Cormorant Garamond', serif;
+  /* ---------- SECCIONES GENERALES ---------- */
+  section{ padding: 60px 20px; }
+  .bg-crema-osc{ background: var(--crema-osc); }
+
+  h2.titulo-verde{
+    color: var(--verde-osc);
+    font-size: 2.2rem;
     font-style: italic;
   }
   .subtexto{
-    max-width: 700px;
+    max-width: 640px;
     margin: 20px auto 0;
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.6;
     color: var(--verde-osc);
   }
 
   /* ---------- MUSICA ---------- */
-  .music-card{
-    text-align:center;
-    padding: 38px 24px;
-  }
   .player{
-    display:flex; align-items:center; justify-content:center; gap:20px;
+    display:flex; align-items:center; justify-content:center; gap:22px;
     margin-top: 20px;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
   .player .play{
-    background: var(--marron); color:#fff; border-radius:50%;
-    width:56px; height:56px; display:flex; align-items:center; justify-content:center;
+    background:#222; color:#fff; border-radius:50%;
+    width:52px; height:52px; display:flex; align-items:center; justify-content:center;
     cursor:pointer;
   }
 
   /* ---------- NOS CASAMOS ---------- */
-  .story-grid{
-    display:grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 32px;
-    align-items:center;
+  .wreath{
+    width: 150px; height:150px; margin: 40px auto 10px;
+    border: 1.5px solid var(--dorado);
+    transform: rotate(45deg);
+    display:flex; align-items:center; justify-content:center;
   }
-  .story-copy{ text-align:left; }
-  .story-copy .intro-title{ margin-bottom: 12px; }
-  .story-copy p{ margin-bottom: 14px; }
-  .marco-banner{
-    min-height: 420px;
-    border-radius: 24px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding: 24px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.70), rgba(250,245,236,0.88)), url('marco.png') center/contain no-repeat;
-    box-shadow: inset 0 0 0 1px rgba(185,144,90,0.14);
+  .wreath span{
+    transform: rotate(-45deg);
+    font-size: 1.1rem;
+    color: var(--verde-osc);
+    line-height:1.3;
   }
-  .marco-banner .text-wrap{ text-align:center; max-width: 280px; }
-  .marco-banner h2{
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    color: var(--marron);
-    line-height:1.1;
-    font-style:italic;
-    font-family: 'Cormorant Garamond', serif;
-  }
-  .marco-banner .heart{ margin-top: 10px; font-size: 2rem; color: var(--verde-osc); font-weight: 700; line-height: 1; }
 
   /* ---------- COUNTDOWN ---------- */
-  .countdown-card{ padding: 38px 24px; text-align:center; }
-  .date-line{
-    display:flex; align-items:center; justify-content:center; gap: 16px;
-    color: var(--marron);
-    font-size: 1.15rem;
-  }
   .fecha-grande{
-    font-size: clamp(3rem, 5vw, 4.25rem);
+    font-size: 4rem;
     color: var(--marron);
     font-family: 'Cormorant Garamond', serif;
-    line-height:1;
+  }
+  .fecha-linea{
+    display:flex; align-items:center; justify-content:center; gap:20px;
+    color: var(--marron);
   }
   .countdown{
-    display:grid; grid-template-columns: repeat(4, minmax(80px, 1fr)); gap: 18px;
-    max-width: 620px; margin: 28px auto 0;
+    display:flex; justify-content:center; gap:30px; margin-top: 20px;
   }
   .countdown .num{
-    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+    font-size: 2.8rem;
     color: var(--dorado);
     font-weight:600;
   }
   .countdown .lbl{
-    font-size: 0.78rem;
-    letter-spacing: 0.16em;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
     color: var(--marron);
-    text-transform: uppercase;
   }
 
-  /* ---------- DETALLES ---------- */
-  .event-grid{
-    display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;
+  /* ---------- DETALLES DEL EVENTO ---------- */
+  .foto-detalles{
+    width:100%; max-width: 700px; margin: 0 auto;
+    height: 380px;
+    background: url('https://placehold.co/700x380/e8ddc8/8a6a4b?text=Foto+de+la+pareja') center/cover no-repeat;
   }
-  .event-card{
-    background: var(--blanco);
-    border-radius: 22px;
-    padding: 32px 24px;
-    text-align:center;
-    box-shadow: 0 12px 28px rgba(138,106,75,0.08);
-  }
-  .event-card .icono{ font-size: 2.3rem; margin-bottom: 8px; }
-  .event-card h3{
+  .evento-card{ margin: 50px auto; max-width:400px; }
+  .evento-card .icono{ font-size: 2.5rem; }
+  .evento-card h3{
     font-family:'Alex Brush', cursive;
     color: var(--verde);
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin: 10px 0;
   }
   .btn{
     display:inline-block;
@@ -206,200 +140,201 @@
     padding: 10px 26px;
     background: var(--verde);
     color:#fff;
-    text-decoration:none;
-    border-radius: 999px;
+    text-decoration: underline;
+    border-radius: 30px;
     font-weight:600;
   }
-
-  /* ---------- INFORMACIÓN ---------- */
-  .info-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:24px; }
-  .info-box{ background: var(--blanco); padding: 30px 24px; border-radius: 22px; text-align:center; box-shadow: 0 12px 28px rgba(138,106,75,0.08); }
+  .grid-2{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    max-width: 700px; margin: 40px auto 0;
+  }
+  @media(max-width:600px){ .grid-2{ grid-template-columns: 1fr; } }
+  .info-box{ background:#fff; padding: 30px 20px; }
   .info-box h4{ color: var(--marron); font-size: 1.5rem; margin-bottom: 10px; }
 
-  /* ---------- REGALOS Y GALERÍA ---------- */
-  .gallery-grid{
-    display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;
+  /* ---------- GALERIA ---------- */
+  .galeria{
+    display:grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+    max-width: 1000px; margin: 40px auto 0;
   }
-  .gallery-grid img{
+  @media(max-width:700px){ .galeria{ grid-template-columns: 1fr; } }
+  .galeria img{
     width:100%; height: 280px; object-fit: cover;
-    border-radius: 18px;
-    border: 8px solid rgba(185,144,90,0.25);
+    border: 10px solid var(--dorado);
   }
+
   .monograma{
     font-family:'Alex Brush', cursive;
     font-size: 3rem;
     color: var(--marron);
-    margin-top: 24px;
+    margin-top: 30px;
   }
 
-  @media(max-width: 860px){
-    .story-grid, .event-grid, .info-grid, .gallery-grid{ grid-template-columns: 1fr; }
-    .gallery-grid img{ height: 240px; }
-  }
-  @media(max-width: 600px){
-    section{ padding: 64px 18px; }
-    .countdown{ grid-template-columns: repeat(2, minmax(90px, 1fr)); }
-    .hero{ min-height: 90vh; }
+  input, textarea{
+    width:100%; max-width:340px; padding:10px; margin:8px 0;
+    border:1px solid #ccc; border-radius:6px; font-family:'EB Garamond',serif;
   }
 </style>
 </head>
 <body>
 
-  <!-- SECCIÓN 1: PORTADA / HERO -->
+  <!-- ============ HERO ============ -->
   <div class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">Nuestra historia</div>
-      <div class="nombres script">Jose</div>
+    <div class="hero-text">
+      <div class="nombres script">Nombre 1</div>
       <div class="amp script">&amp;</div>
-      <div class="nombres script">Abby</div>
-      <p class="subline">Nos encantaría compartir este día tan especial contigo.</p>
+      <div class="nombres script">Nombre 2</div>
     </div>
   </div>
 
-  <!-- SECCIÓN 2: MÚSICA -->
+  <!-- ============ MUSICA ============ -->
+  <section class="bg-crema-osc">
+    <h2 class="titulo-verde script" style="font-size:1.8rem;">Nuestra Canción</h2>
+    <div class="player">
+      <span>♡</span><span>⏮</span>
+      <div class="play" id="playBtn" onclick="toggleSong()">▶</div>
+      <span>⏭</span><span>⊕</span>
+    </div>
+    <div id="spotifyContainer" style="max-width:400px; margin:15px auto 0; height:0; overflow:hidden;"></div>
+  </section>
+
+  <!-- ============ NOS CASAMOS ============ -->
   <section>
-    <div class="container">
-      <div class="section-card music-card">
-        <h2 class="intro-title script" style="font-size:2.2rem;">Nuestra Canción</h2>
-        <div class="player">
-          <span>♡</span><span>⏮</span>
-          <div class="play" id="playBtn" onclick="toggleSong()">▶</div>
-          <span>⏭</span><span>⊕</span>
-        </div>
-        <div id="spotifyContainer" style="max-width:420px; margin:18px auto 0; height:0; overflow:hidden;"></div>
+    <div class="wreath"><span>¡Llegó el<br>gran día! ♥</span></div>
+    <h2 class="serif-title" style="font-style:italic; margin-top:20px;">¡Nos Casamos!</h2>
+    <p style="font-size:2rem; margin-top:10px;">💍</p>
+    <p class="subtexto">
+      Dios nos ha concedido el privilegio de conocernos y amarnos; con su bendición
+      y la de nuestros padres, queremos unir nuestras vidas para siempre.
+    </p>
+    <p class="subtexto script" style="font-size:1.4rem; margin-top:30px;">
+      Aquí comienza la cuenta regresiva para el mejor día de nuestras vidas,
+      y queremos que seas parte de ese día tan especial para nosotros...
+    </p>
+  </section>
+
+  <!-- ============ COUNTDOWN ============ -->
+  <section class="bg-crema-osc">
+    <div class="fecha-linea">
+      <div>
+        <div style="font-size:1.6rem;">Agosto</div>
       </div>
+    </div>
+    <div class="fecha-linea">
+      <div>Sábado</div>
+      <div class="fecha-grande">15</div>
+      <div>2026</div>
+    </div>
+    <p class="titulo-verde" style="margin-top:30px; font-size:1.6rem;">¡Faltan!</p>
+    <div class="countdown">
+      <div><div class="num" id="dias">00</div><div class="lbl">DÍAS</div></div>
+      <div><div class="num" id="horas">00</div><div class="lbl">HORAS</div></div>
+      <div><div class="num" id="min">00</div><div class="lbl">MINUTOS</div></div>
+      <div><div class="num" id="seg">00</div><div class="lbl">SEGUNDOS</div></div>
     </div>
   </section>
 
-  <!-- SECCIÓN 3: NOS CASAMOS -->
+  <!-- ============ DETALLES DEL EVENTO ============ -->
   <section>
-    <div class="container">
-      <div class="marco-banner">
-          <div class="text-wrap">
-            <div class="eyebrow script" style="font-size:1rem;"></div>
-            <h2>¡Llegó el gran día!</h2>
-            <div class="heart">♥</div>
-          </div>
-      <div class="story-grid">
-        <div class="story-copy">
-          <p class="eyebrow"></p>
-          <h2 class="intro-title">¡Nos Casamos!</h2>
-          <p class="subtexto" style="margin:0; color:var(--texto);">
-            <!-- Texto principal de la sección "Nos Casamos" -->
-            Dios nos ha concedido el privilegio de conocernos y amarnos; con su bendición y la de nuestros padres, queremos unir nuestras vidas para siempre.
-          </p>
-        </div>
+    <div class="foto-detalles"></div>
+    <h2 class="serif-title" style="font-style:italic; color:var(--dorado); margin-top:40px;">¡Detalles del Evento!</h2>
+
+    <div class="evento-card">
+      <div class="icono">⛪</div>
+      <h3>Ceremonia</h3>
+      <p>Nombre del templo o iglesia<br>Ciudad</p>
+      <p>16:00 hrs.</p>
+      <a class="btn" href="https://maps.google.com" target="_blank">Ver Ubicación</a>
+    </div>
+
+    <div class="evento-card">
+      <div class="icono">🥂</div>
+      <h3>Recepción</h3>
+      <p>Nombre del salón o jardín<br>Ciudad</p>
+      <p>18:00 hrs.</p>
+      <a class="btn" href="https://maps.google.com" target="_blank">Ver Ubicación</a>
+    </div>
+  </section>
+
+  <section class="bg-crema-osc">
+    <h3 style="color:var(--marron); font-size:1.8rem;">Celebra con nosotros nuestro pacto de amor.</h3>
+    <p class="titulo-verde" style="font-size:1.1rem;">Te dejamos algunos detalles a tener en cuenta.</p>
+    <div class="grid-2">
+      <div class="info-box">
+        <h4>Dress Code</h4>
+        <p style="font-size:1.8rem;">🎀</p>
+        <p>* Formal.<br>*Elegante Sport.<br>* La celebración será en jardín, considera zapatos aptos para grama.</p>
       </div>
+      <div class="info-box">
+        <h4>Nota</h4>
+        <p style="font-size:1.8rem;">📋</p>
+        <p>¡Confirmar asistencia!</p>
+        <a class="btn" href="https://wa.me/50200000000?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda" target="_blank">Confirma Asistencia</a>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 4: CUENTA REGRESIVA -->
-  <section class="soft-bg">
-    <div class="container">
-      <div class="section-card countdown-card">
-        <!-- Texto de acompañamiento de la cuenta regresiva -->
-        <p class="subtexto" style="margin-top:16px; color:var(--verde-osc);">
-          Aquí comienza la cuenta regresiva para el mejor día de nuestras vidas, y queremos que seas parte de ese día tan especial para nosotros.
-        </p>
-        <div class="date-line">
-          <div>Agosto</div>
-          <div class="fecha-grande">15</div>
-          <div>2026</div>
-        </div>
-        <p class="eyebrow" style="margin-top:16px;">Sábado</p>
-        <h3 class="intro-title" style="font-size:1.8rem; margin-top:8px;">¡Faltan!</h3>
-        <div class="countdown">
-          <div><div class="num" id="dias">00</div><div class="lbl">Días</div></div>
-          <div><div class="num" id="horas">00</div><div class="lbl">Horas</div></div>
-          <div><div class="num" id="min">00</div><div class="lbl">Minutos</div></div>
-          <div><div class="num" id="seg">00</div><div class="lbl">Segundos</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 5: DETALLES DEL EVENTO -->
+  <!-- ============ REGALOS ============ -->
   <section>
-    <div class="container">
-      <div class="event-grid">
-        <div class="event-card">
-          <div class="icono">⛪</div>
-          <h3>Ceremonia</h3>
-          <p>Jardín Casa Azul<br>San Lucas Sacatepéquez</p>
-          <p>17:30 hrs.</p>
-          <a class="btn" href="https://maps.app.goo.gl/vMkwDSkkJ3feRnU2A" target="_blank">Ver Ubicación</a>
-        </div>
-        <div class="event-card">
-          <div class="icono">🥂</div>
-          <h3>Recepción</h3>
-          <p>Jardín Casa Azul<br>San Lucas Sacatepéquez</p>
-          <p>19:30 hrs.</p>
-          <a class="btn" href="https://maps.app.goo.gl/vMkwDSkkJ3feRnU2A" target="_blank">Ver Ubicación</a>
-        </div>
-      </div>
+    <p style="font-size:2.5rem;">🎁</p>
+    <h2 class="titulo-verde script" style="font-size:2rem;">Sugerencia de Regalos</h2>
+    <p class="subtexto">
+      Su presencia es nuestro mayor regalo, pero si desean darnos un presente,
+      lo pueden hacer de la siguiente forma:
+    </p>
+    <h3 style="color:var(--verde); margin-top:40px;">Efectivo</h3>
+    <p style="font-size:2.5rem;">✉️</p>
+    <h3 style="color:var(--verde); margin-top:30px;">Lista de Regalos</h3>
+    <p style="font-size:2.5rem;">🎁</p>
+    <a class="btn" href="#" target="_blank">Ver lista de regalos</a>
+  </section>
+
+  <!-- ============ GALERIA ============ -->
+  <section class="bg-crema-osc">
+    <h2 class="titulo-verde script" style="font-size:2rem;">Retratos de nuestro amor</h2>
+    <p style="color:var(--marron); margin-top:10px;">El amor no se mira con los ojos, sino con el alma.</p>
+    <div class="galeria">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
     </div>
   </section>
 
-  <!-- SECCIÓN 6: DRESS CODE Y CONFIRMACIÓN -->
-  <section class="soft-bg">
-    <div class="container">
-      <div class="info-grid">
-        <div class="info-box">
-          <h4>Dress Code</h4>
-          <p style="font-size:1.8rem;">🎀</p>
-          <p>Formal o elegante sport. La celebración será en jardín, así que te recomendamos zapatos cómodos y un abrigo para el frío.</p>
-        </div>
-        <div class="info-box">
-          <h4>Nota</h4>
-          <p style="font-size:1.8rem;">📋</p>
-          <p>Tu presencia es muy importante para nosotros. Confirma tu asistencia para que podamos prepararnos con alegría.</p>
-          <a class="btn" href="https://wa.me/50248024841?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda" target="_blank">Confirma Asistencia</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 7: REGALOS -->
+  <!-- ============ CIERRE ============ -->
   <section>
-    <div class="container" style="text-align:center;">
-      <p class="eyebrow">Sugerencia de regalos</p>
-      <h2 class="intro-title">Tu presencia es nuestro mayor regalo</h2>
-      <p class="subtexto">
-        Si deseas honrarnos con un presente, lo puedes hacer de manera sencilla y muy querida para nosotros.
-      </p>
-      <div style="margin-top:24px;">
-        <a class="btn" href="#">Ver lista de regalos</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 8: GALERÍA -->
-  <section class="soft-bg">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:24px;">
-        <p class="eyebrow">Retratos de nuestro amor</p>
-        <h2 class="intro-title">El amor no se mira con los ojos, sino con el alma.</h2>
-      </div>
-      <div class="gallery-grid">
-        <img src="foto1.jpg" alt="Foto 1">
-        <img src="foto2.jpg" alt="Foto 2">
-        <img src="portada.jpg" alt="Foto 3">
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 9: CIERRE -->
-  <section>
-    <div class="container" style="text-align:center;">
-      <h3 class="intro-title">Esperamos contar con tu presencia</h3>
-      <h2 class="script" style="font-size:3rem; color:var(--marron); margin-top:20px;">¡Muchas Gracias!</h2>
-      <div class="monograma">A&amp;J</div>
-    </div>
+    <h3 class="titulo-verde">Esperamos contar con su presencia</h3>
+    <h2 class="script" style="font-size:3rem; color:var(--marron); margin-top:40px;">¡Muchas Gracias!</h2>
+    <div class="monograma">N &amp; N</div>
   </section>
 
 <script>
-  const fechaBoda = new Date("2026-08-15T15:30:00");
+  // ======= REPRODUCTOR DE "NUESTRA CANCIÓN" =======
+  let cancionSonando = false;
+  const spotifyURL = "https://open.spotify.com/embed/track/1myZ6GQewhAzMH2dKtKSWK?utm_source=generator";
+
+  function toggleSong(){
+    const contenedor = document.getElementById('spotifyContainer');
+    const boton = document.getElementById('playBtn');
+
+    if(!cancionSonando){
+      // Crea el iframe con autoplay=1 para que arranque desde el inicio de la canción
+      contenedor.innerHTML = `<iframe style="border-radius:12px" src="${spotifyURL}&autoplay=1" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+      contenedor.style.height = "152px";
+      boton.textContent = "❙❙";
+      cancionSonando = true;
+    } else {
+      // Quita el iframe para detener la reproducción
+      contenedor.innerHTML = "";
+      contenedor.style.height = "0";
+      boton.textContent = "▶";
+      cancionSonando = false;
+    }
+  }
+</script>
+
+<script>
+  // ======= CONFIGURA AQUÍ LA FECHA DE LA BODA =======
+  const fechaBoda = new Date("2026-08-15T17:30:00");
 
   function actualizarCountdown(){
     const ahora = new Date();
