@@ -291,9 +291,10 @@
   .dresscode-palette-sublabel{ font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--verde-osc); }
   .dresscode-swatches{ display:flex; gap: 6px; }
   .dresscode-swatch-pill{ flex:1; height: 44px; border-radius: 8px; }
-  .dresscode-reference{ margin-bottom: 14px; }
+  .dresscode-reference{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
   .dresscode-reference-card{ background: #f9f4eb; border: 1px solid rgba(138,106,75,0.12); border-radius: 14px; padding: 10px; }
   .dresscode-ref-image{ width:100%; height:auto; max-height:none; object-fit: contain; border-radius: 10px; display:block; }
+  @media(max-width:600px){ .dresscode-reference{ grid-template-columns: 1fr; } }
   .dresscode-avoid{
     border-top: 1px solid rgba(138,106,75,0.2);
     padding-top: 14px;
@@ -460,7 +461,10 @@
           <p class="dresscode-section-label">Invitados</p>
           <div class="dresscode-reference">
             <div class="dresscode-reference-card">
-              <img src="reff.jpeg" alt="Referencia de estilo para la boda" class="dresscode-ref-image">
+              <img src="mujeres.jpeg" alt="Sugerencia de outfit para mujeres" class="dresscode-ref-image">
+            </div>
+            <div class="dresscode-reference-card">
+              <img src="hombres.jpeg" alt="Sugerencia de outfit para hombres" class="dresscode-ref-image">
             </div>
           </div>
 
@@ -486,7 +490,7 @@
   <!-- ============ REGALOS ============ -->
   <section>
     <h1 class="titulo-verde script" style="font-size:2rem;">Sugerencia de Regalos<br><br></h1>
-    <br><br>
+    <div style="height: 40px;"></div>
     <p class="icono-minimal" style="font-size:2rem;"><i class="bi bi-gift"></i></p>
     <p class="subtexto script" style="font-size:1.5rem;">Su presencia es nuestro mayor regalo, pero si desean darnos un presente,
       lo pueden hacer de la siguiente forma:</p>
@@ -498,7 +502,7 @@
 
   <!-- ============ GALERIA ============ -->
   <section class="bg-crema-osc">
-    <h2 class="titulo-verde script" style="font-size:2rem;">“Nosotros amamos porque Él nos amó primero.”<br>1 Juan 4:19</h2>
+    <h2 class="titulo-verde script" style="font-size:2rem; color:var(--marron);">“Nosotros amamos porque Él nos amó primero.”<br>1 Juan 4:19</h2>
     <div class="galeria">
       <img src="portada.jpg" alt="Foto 1">
       <img src="foto2.jpg" alt="Foto 2">
