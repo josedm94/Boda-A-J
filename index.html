@@ -196,16 +196,24 @@
     border-radius: 30px;
     font-weight:600;
   }
-  .grid-2{
-    display:grid; grid-template-columns: 1fr 1fr; gap: 20px;
-    max-width: 700px; margin: 40px auto 0;
+  .details-stack{
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+    max-width: 760px;
+    margin: 40px auto 0;
   }
-  @media(max-width:600px){ .grid-2{ grid-template-columns: 1fr; } }
   .info-box{ background:#fff; padding: 30px 20px; }
   .info-box h4{ color: var(--marron); font-size: 1.5rem; margin-bottom: 10px; }
+  .note-box{
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    text-align:center;
+  }
   .dresscode-card{
-    background: linear-gradient(135deg, rgba(243,234,217,0.9), rgba(255,255,255,0.95));
-    border: 1px solid rgba(139, 106, 75, 0.12);
+    background:#fff;
+    border: 1px solid rgba(138, 106, 75, 0.12);
     border-radius: 18px;
     padding: 24px 18px;
     max-width: 100%;
@@ -362,9 +370,9 @@
         <span class="marco-heart"><i class="bi bi-heart-fill"></i></span>
       </div>
     </div>
-    <h2 class="serif-title" style="font-style:italic; margin-top:20px;">¡Nos Casamos!</h2>
+    <h2 class="script" style="font-size:2.4rem; margin-top:20px; color:var(--marron);">¡Nos Casamos!</h2>
     <p style="font-size:2rem; margin-top:10px;"><i class="bi bi-gem"></i></p>
-    <p class="subtexto">
+    <p class="subtexto script">
       Dios nos ha concedido el privilegio de conocernos y amarnos; con su bendición
       y la de nuestros padres, queremos unir nuestras vidas para siempre.
     </p>
@@ -410,7 +418,7 @@
     </div>
 
     <div class="evento-card">
-      <div class="icono"><i class="bi bi-cup-straw"></i></div>
+      <div class="icono"><i class="bi bi-plate"></i></div>
       <h3>Recepción</h3>
       <p>Jardín de Eventos Casa Azul<br>Ciudad</p>
       <p>19:30 hrs.</p>
@@ -419,9 +427,9 @@
   </section>
 
   <section class="bg-crema-osc">
-    <h3 style="color:var(--marron); font-size:1.8rem;">Celebra con nosotros nuestro pacto de amor.</h3>
-    <p class="titulo-verde" style="font-size:1.1rem;">Te dejamos algunos detalles a tener en cuenta.</p>
-    <div class="grid-2">
+    <h3 class="script" style="color:var(--marron); font-size:1.8rem;">Celebra con nosotros nuestro pacto de amor.</h3>
+    <p class="subtexto script" style="font-size:1.1rem;">Te dejamos algunos detalles a tener en cuenta.</p>
+    <div class="details-stack">
       <div class="info-box">
         <div class="dresscode-card">
           <p class="dresscode-eyebrow">Dresscode</p>
@@ -472,16 +480,13 @@
             <div class="dresscode-avoid-chips">
               <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#FFFFFF; border:0.5px solid #444;"></span>Blanco</div>
               <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#1B2A4A;"></span>Azul marino</div>
-              <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#E8C4BC;"></span>Palo rosa</div>
               <div class="dresscode-avoid-chip"><span class="dresscode-avoid-dot" style="background:#F8F0FF; border:0.5px solid #444;"></span>Pasteles</div>
             </div>
           </div>
-
-          <p class="dresscode-tip">Accesorios dorados o cobrizos<br>son siempre bienvenidos.</p>
         </div>
       </div>
-      <div class="info-box">
-        <h4>Nota</h4>
+      <div class="info-box note-box">
+        <h4 class="script">Nota</h4>
         <p class="icono-minimal"><i class="bi bi-clipboard-check"></i></p>
         <p>¡Confirmar asistencia!</p>
         <a class="btn" href="https://wa.me/50248024841?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda" target="_blank">Confirma Asistencia</a>
@@ -497,10 +502,9 @@
       Su presencia es nuestro mayor regalo, pero si desean darnos un presente,
       lo pueden hacer de la siguiente forma:
     </p>
-    <h3 style="color:var(--verde); margin-top:40px;">Efectivo</h3>
+    <h3 class="script" style="color:var(--verde); margin-top:40px;">Efectivo</h3>
     <p class="icono-minimal" style="font-size:2rem;"><i class="bi bi-envelope-paper"></i></p>
-    <h3 style="color:var(--verde); margin-top:30px;">Lista de Regalos</h3>
-    <p style="font-size:2.5rem;">🎁</p>
+    <h3 class="script" style="color:var(--verde); margin-top:30px;">Lista de Regalos</h3>
     <a class="btn" href="#" target="_blank">Ver lista de regalos</a>
   </section>
 
@@ -517,7 +521,7 @@
 
   <!-- ============ CIERRE ============ -->
   <section>
-    <h3 class="titulo-verde">Esperamos contar con su presencia</h3>
+    <h3 class="titulo-verde script">Esperamos contar con tu presencia</h3>
     <h2 class="script" style="font-size:3rem; color:var(--marron); margin-top:40px;">¡Muchas Gracias!</h2>
     <div class="monograma">A &amp; J</div>
   </section>
