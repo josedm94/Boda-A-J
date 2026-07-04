@@ -73,17 +73,34 @@
 
   /* ---------- MUSICA ---------- */
   .player{
-    display:flex; align-items:center; justify-content:center; gap:22px;
+    display:flex; align-items:center; justify-content:center; gap:12px;
     margin-top: 20px;
     font-size: 1.4rem;
+    flex-wrap: wrap;
   }
   .player .play{
     background:#222; color:#fff; border-radius:50%;
-    width:52px; height:52px; display:flex; align-items:center; justify-content:center;
+    width:56px; height:56px; display:flex; align-items:center; justify-content:center;
     cursor:pointer;
     border:none;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
+  .player .ctrl{
+    background: transparent;
+    color: var(--verde-osc);
+    border: none;
+    width:42px; height:42px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    border-radius:50%;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .player .ctrl:hover{
+    background: rgba(95, 122, 99, 0.12);
+    transform: scale(1.05);
+  }
+  .player .ctrl.heart{ color: #c96b6b; }
   .audio-info{
     margin-top: 12px;
     font-size: 0.95rem;
@@ -226,7 +243,11 @@
   <section class="bg-crema-osc">
     <h2 class="titulo-verde script" style="font-size:1.8rem;">Nuestra Canción</h2>
     <div class="player">
+      <button class="ctrl heart" type="button" aria-label="Agregar a favoritos"><i class="bi bi-heart"></i></button>
+      <button class="ctrl" type="button" aria-label="Anterior"><i class="bi bi-skip-start-fill"></i></button>
       <button class="play" id="playBtn" onclick="toggleSong()" aria-label="Reproducir canción"><i class="bi bi-play-fill"></i></button>
+      <button class="ctrl" type="button" aria-label="Siguiente"><i class="bi bi-skip-end-fill"></i></button>
+      <button class="ctrl" type="button" aria-label="Más opciones"><i class="bi bi-three-dots"></i></button>
     </div>
     <audio id="audioPlayer" preload="none">
       <source src="" type="audio/mpeg">
