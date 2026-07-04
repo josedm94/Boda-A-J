@@ -83,17 +83,22 @@
   }
 
   /* ---------- NOS CASAMOS ---------- */
-  .wreath{
-    width: 150px; height:150px; margin: 40px auto 10px;
-    border: 1.5px solid var(--dorado);
-    transform: rotate(45deg);
-    display:flex; align-items:center; justify-content:center;
+  .marco-banner{
+    width: min(90vw, 460px);
+    aspect-ratio: 1 / 1;
+    margin: 20px auto 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: url('marco.png') center/contain no-repeat;
+    padding: 20px;
   }
-  .wreath span{
-    transform: rotate(-45deg);
-    font-size: 1.1rem;
-    color: var(--verde-osc);
-    line-height:1.3;
+  .marco-banner h2{
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--marron);
+    text-align:center;
+    line-height:1.2;
+    font-style:italic;
   }
 
   /* ---------- COUNTDOWN ---------- */
@@ -200,8 +205,9 @@
 
   <!-- ============ NOS CASAMOS ============ -->
   <section>
-    <div class="wreath"><span>¡Llegó el<br>gran día! ♥</span></div>
-    <h2 class="serif-title" style="font-style:italic; margin-top:20px;">¡Nos Casamos!</h2>
+    <div class="marco-banner">
+      <h2>¡Nos Casamos!</h2>
+    </div>
     <p style="font-size:2rem; margin-top:10px;">💍</p>
     <p class="subtexto">
       Dios nos ha concedido el privilegio de conocernos y amarnos; con su bendición
