@@ -83,16 +83,43 @@
   }
 
   /* ---------- NOS CASAMOS ---------- */
+  .marco-image-wrap{
+    position:relative;
+    width:min(80vw, 280px);
+    margin: 20px auto 10px;
+  }
   .marco-image{
     display:block;
-    width:min(80vw, 280px);
+    width:100%;
     height:auto;
-    margin: 20px auto 10px;
     padding:0;
     border:none;
     background:none;
     box-shadow:none;
     transform:none;
+  }
+  .marco-text{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 20px;
+    color: var(--marron);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+    font-style: italic;
+    line-height:1.2;
+    pointer-events:none;
+  }
+  .marco-heart{
+    display:inline-block;
+    margin-top: 8px;
+    color: #2e7d32;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height:1;
   }
 
   /* ---------- COUNTDOWN ---------- */
@@ -199,7 +226,13 @@
 
   <!-- ============ NOS CASAMOS ============ -->
   <section>
-    <img src="marco.png" alt="Decoración Nos Casamos" class="marco-image">
+    <div class="marco-image-wrap">
+      <img src="marco.png" alt="Decoración Nos Casamos" class="marco-image">
+      <div class="marco-text">
+        <span>¡Llegó el gran día!</span>
+        <span class="marco-heart">❤️</span>
+      </div>
+    </div>
     <h2 class="serif-title" style="font-style:italic; margin-top:20px;">¡Nos Casamos!</h2>
     <p style="font-size:2rem; margin-top:10px;">💍</p>
     <p class="subtexto">
