@@ -84,21 +84,43 @@
 
   /* ---------- NOS CASAMOS ---------- */
   .marco-banner{
-    width: min(90vw, 460px);
-    aspect-ratio: 1 / 1;
-    margin: 20px auto 0;
+    width: min(92vw, 500px);
+    min-height: 360px;
+    margin: 24px auto 18px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background: url('marco.png') center/contain no-repeat;
-    padding: 20px;
+    padding: clamp(24px, 5vw, 42px);
+    border-radius: 24px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.72), rgba(250,245,236,0.86)),
+      url('marco.png') center/contain no-repeat;
+    box-shadow: 0 12px 35px rgba(138,106,75,0.14);
+  }
+  .marco-banner .text-wrap{
+    max-width: 300px;
+    text-align:center;
+    padding: 8px 10px;
+  }
+  .marco-banner .eyebrow{
+    font-size: 1.1rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 8px;
   }
   .marco-banner h2{
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--marron);
-    text-align:center;
-    line-height:1.2;
+    line-height:1.15;
     font-style:italic;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.03em;
+  }
+  .marco-banner .heart{
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: var(--verde-osc);
   }
 
   /* ---------- COUNTDOWN ---------- */
@@ -206,7 +228,11 @@
   <!-- ============ NOS CASAMOS ============ -->
   <section>
     <div class="marco-banner">
-      <h2>¡Nos Casamos!</h2>
+      <div class="text-wrap">
+        <div class="eyebrow script">Nuestra historia</div>
+        <h2>¡Nos Casamos!</h2>
+        <div class="heart">♥</div>
+      </div>
     </div>
     <p style="font-size:2rem; margin-top:10px;">💍</p>
     <p class="subtexto">
