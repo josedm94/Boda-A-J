@@ -336,14 +336,19 @@
   @media(max-width:480px){
     .galeria{ margin-top: 24px; }
     .galeria img{
-      height: 260px;
-      object-position: center 25%;
+      height: auto;
+      max-height: 420px;
+      aspect-ratio: 4 / 5;
+      object-fit: contain;
+      object-position: center center;
       border-width: 6px;
       border-radius: 12px;
+      background: #fdf8ef;
+      padding: 6px;
     }
-    .galeria img:nth-child(1){ object-position: center 35%; }
-    .galeria img:nth-child(2){ object-position: center 40%; }
-    .galeria img:nth-child(3){ object-position: center 30%; }
+    .galeria img:nth-child(1){ object-position: center center; transform: none; }
+    .galeria img:nth-child(2){ object-position: center center; transform: none; }
+    .galeria img:nth-child(3){ object-position: center center; transform: none; }
   }
 
   .monograma{
